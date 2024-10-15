@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: darkcyan;
+}
+main{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#card{
+    background-color: white;
+    width: 40%;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#user-input{
+    display: grid;
+    align-items: center;
+    margin: 10px 0;
+}
+#user-pswd{
+    border: 2px solid brown;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 0;
+    outline: none;
+    padding-left: 10px;
+}
+
+#password-strength-container{
+    margin-top: 15px;
+    width: 100%;
+    background-color: lightgrey;
+}
+
+#password-strength-value{
+    height: 20px;
+    transition: all 0.5s ease;
+}
+.fa-xmark{
+    color:grey
+}
+
+.fa-check{
+    color: yellowgreen;
+}
+
+#btn-container{
+    display: grid;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+    margin-top: 10px;
+}
+
+#btn-confirm{
+    padding: 5px 10px;
+    background: linear-gradient(to right, azure 50%, blue 50%);
+    background-size: 200%;
+    background-position: right bottom;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: all 0.5s ease;
+}
+
+#btn-confirm:hover{
+    background-position: left bottom;
+    color: blue;
+    border: 1px solid blue;
+}
+
