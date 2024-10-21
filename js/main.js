@@ -15,7 +15,7 @@ userInput.addEventListener('input', () => {
         passwordStrength = 0;
     }
 
-    if(password.length >= 9) {
+    if(password.length.trim() >= 9) {
         passwordStrength++;
         minCharacters.style.color = 'yellowgreen';
         minCharacters.innerHTML = '<i class="fa-solid fa-check"></i> Almeno 9 Caratteri'
@@ -42,7 +42,7 @@ userInput.addEventListener('input', () => {
         number.innerHTML = '<i class="fa-solid fa-xmark"></i> Almeno un numero'
     }
 
-    if(/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+    if(/\W/.test(password)){
         passwordStrength++;
         specialCharacter.style.color = 'yellowgreen';
         specialCharacter.innerHTML = '<i class="fa-solid fa-check"></i> Almeno un carattere speciale'

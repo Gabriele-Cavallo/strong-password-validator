@@ -6,11 +6,16 @@
 
 body{
     background-color: darkcyan;
+    color: grey;
 }
 main{
     height: 100vh;
     display: grid;
     place-items: center;
+}
+
+h1{
+    color: black;
 }
 
 #card{
