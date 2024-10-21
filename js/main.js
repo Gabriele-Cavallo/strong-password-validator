@@ -2,53 +2,65 @@ const minCharacters = document.getElementById('min-characters');
 const capitalLetter = document.getElementById('capital-letter');
 const number = document.getElementById('number');
 const specialCharacter = document.getElementById('special-character');
+const minCharactersIcon = document.getElementById('min-characters-icon');
+const capitalLetterIcon = document.getElementById('capital-letter-icon');
+const numberIcon = document.getElementById('number-icon');
+const specialCharacterIcon = document.getElementById('special-character-icon');
 const passwordStrengthValue = document.getElementById('password-strength-value');
 const userInput = document.getElementById('user-pswd');
 const buttonContainer = document.getElementById('btn-container');
 const card = document.getElementById('card');
 
 userInput.addEventListener('input', () => {
-    const password = userInput.value;
+    const password = userInput.value.trim();
     let passwordStrength = 0;
 
     if(password === ''){
         passwordStrength = 0;
     }
 
-    if(password.length.trim() >= 9) {
+    if(password.length >= 9) {
         passwordStrength++;
         minCharacters.style.color = 'yellowgreen';
-        minCharacters.innerHTML = '<i class="fa-solid fa-check"></i> Almeno 9 Caratteri'
+        minCharactersIcon.classList.remove('fa-xmark');
+        minCharactersIcon.classList.add('fa-check');
     }else{
         minCharacters.style.color = 'grey';
-        minCharacters.innerHTML = '<i class="fa-solid fa-xmark"></i> Almeno 9 Caratteri'
+        minCharactersIcon.classList.remove('fa-check');
+        minCharactersIcon.classList.add('fa-xmark');
     }
 
     if(/[A-Z]/.test(password)) {
         passwordStrength++;
         capitalLetter.style.color = 'yellowgreen';
-        capitalLetter.innerHTML = '<i class="fa-solid fa-check"></i> Almeno una maiuscola'
+        capitalLetterIcon.classList.remove('fa-xmark');
+        capitalLetterIcon.classList.add('fa-check');
     }else{
         capitalLetter.style.color = 'grey';
-        capitalLetter.innerHTML = '<i class="fa-solid fa-xmark"></i> Almeno una maiuscola'
+        capitalLetterIcon.classList.remove('fa-check');
+        capitalLetterIcon.classList.add('fa-xmark');
     }
 
     if(/[0-9]/.test(password)) {
         passwordStrength++;
         number.style.color = 'yellowgreen';
-        number.innerHTML = '<i class="fa-solid fa-check"></i> Almeno un numero'
+        numberIcon.classList.remove('fa-xmark');
+        numberIcon.classList.add('fa-check');
     }else{
         number.style.color = 'grey';
-        number.innerHTML = '<i class="fa-solid fa-xmark"></i> Almeno un numero'
+        numberIcon.classList.remove('fa-check');
+        numberIcon.classList.add('fa-xmark');
     }
 
     if(/\W/.test(password)){
         passwordStrength++;
         specialCharacter.style.color = 'yellowgreen';
-        specialCharacter.innerHTML = '<i class="fa-solid fa-check"></i> Almeno un carattere speciale'
+        specialCharacterIcon.classList.remove('fa-xmark');
+        specialCharacterIcon.classList.add('fa-check');
     }else{
         specialCharacter.style.color = 'grey';
-        specialCharacter.innerHTML = '<i class="fa-solid fa-xmark"></i> Almeno un carattere speciale'
+        specialCharacterIcon.classList.remove('fa-check');
+        specialCharacterIcon.classList.add('fa-xmark');
     }
 
     if(passwordStrength === 1){
